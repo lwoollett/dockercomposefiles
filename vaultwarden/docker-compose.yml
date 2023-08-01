@@ -15,13 +15,13 @@ services:
     container_name: caddy
     restart: always
     ports:
-      - 80:80  # Needed for the ACME HTTP-01 challenge.
+      - 80:80 # Needed for the ACME HTTP-01 challenge.
       - 443:443
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile:ro
       - ./caddy-config:/config
       - ./caddy-data:/data
     environment:
-      DOMAIN: "https://vault.lwoollett.info" 
+      DOMAIN: "https://vault.lwoollett.info"
       EMAIL: "me@lwlt.dev"
       LOG_FILE: "/data/access.log"
